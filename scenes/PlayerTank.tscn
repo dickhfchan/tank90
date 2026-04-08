@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/PlayerTank.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(28, 28)
+
+[node name="PlayerTank" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1")
+
+[node name="Sprite" type="ColorRect" parent="."]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="GunBarrel" type="ColorRect" parent="."]
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 3.0
+offset_bottom = 0.0
+color = Color(0.1, 0.6, 0.1, 1)
+
+[node name="GunTip" type="Marker2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
